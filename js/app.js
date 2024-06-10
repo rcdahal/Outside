@@ -119,5 +119,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Mobile Toggle Menu
 function toggleMobile() {
-  window.location.href = "./index.php";
+  window.location.href = "./index.html";
 }
