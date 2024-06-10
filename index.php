@@ -6,18 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outside Assignment</title>
     <link rel="stylesheet" href="./css/style.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Owl Carousel JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </head>
 
 <body>
+    <!-- Header Section Start -->
     <header>
         <div class="top-header mobile-hide">
             <p>This is a global announcement!</p>
@@ -41,7 +33,7 @@
                                         <li><a href="#">Tableware & Bibs</a></li>
                                         <li><a href="#">Mealtime Accessories</a></li>
                                         <li><a href="#">Bundle & Save</a></li>
-                                        <li><a href="#">All Mealtime</a></li>
+                                        <li><a href="#" class="all-item">All Mealtime</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -92,7 +84,7 @@
                                         <li><a href="#">Newborn Box</a></li>
                                         <li><a href="#">Gift Play Boxes</a></li>
                                         <li><a href="#">Redeem Gift</a></li>
-                                        <li class="cat-sub-menu"><a href="#">All Play Boxes</a></li>
+                                        <li class="cat-sub-menu"><a href="#" class="all-item">All Play Boxes</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -197,13 +189,12 @@
             <div class="m-menu">
                 <ul>
                     <li><a href="#">Mealtime</a></li>
-                    <li>Mealtime</li>
-                    <li>Mealtime</li>
-                    <li>Mealtime</li>
-                    <li>Mealtime</li>
-                    <li>Mealtime</li>
-                    <li>Mealtime</li>
-                    <li>Shop All</li>
+                    <li><a href="#">Mealtime</a></li>
+                    <li><a href="#">Mealtime</a></li>
+                    <li><a href="#">Mealtime</a></li>
+                    <li><a href="#">Mealtime</a></li>
+                    <li><a href="#">Mealtime</a></li>
+                    <li><a href="#">Shop All</a></li>
                 </ul>
             </div>
         </div>
@@ -217,30 +208,74 @@
                     <img src="./images/cross.png">
                 </div>
             </div>
+
+            <div class="sub-category">
+                <ul>
+                    <li><a href="#">High Chair</a></li>
+                    <li><a href="#">Booster</a></li>
+                    <li><a href="#">Tableware & Bibs</a></li>
+                    <li><a href="#">Mealtime Accessories</a></li>
+                    <li><a href="#">Bundle & Save</a></li>
+                    <li><a href="#" class="all-item">All Mealtime</a></li>
+                </ul>
+            </div>
+            <div class="featured-product">
+                <div class="header-title">
+                    <h3>Featured Mealtime</h3>
+                    <a href="#" class="s-btn">Shop All</a>
+                </div>
+                <div class="p-grid ">
+                    <div class="p-item">
+                        <div class="p-image">
+                            <img src="./images/The Chair.png" alt="Logo">
+                        </div>
+                        <p class="p-tag">BEST SELLER</p>
+                        <p class="p-name">The Chair</p>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-image">
+                            <img src="./images/The Chair.png" alt="Logo">
+                        </div>
+                        <p class="p-tag">BEST SELLER</p>
+                        <p class="p-name">First Bites Full Kit</p>
+                    </div>
+                    <div class="p-item">
+                        <div class="p-image">
+                            <img src="./images/The Chair.png" alt="Logo">
+                        </div>
+                        <p class="p-tag">BEST SELLER</p>
+                        <p class="p-name">Suction Plate</p>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </header>
+    <!-- Header Section End -->
 
-
-
+    <!-- Product Slider Section Start -->
     <section class="product-slider-section">
         <div class="grid-container">
             <div class="p-slider active">
                 <div class="g-item">
                     <div class="video-element">
-                        <!-- <div class="vimeo-video" data-video-id="931144540"></div>
-                    <video class="custom-video" autoplay controls>
-                        <source src="https://vimeo.com/931144540" type="video/mp4">
-                    </video> -->
-                        <img src="./images/test.png">
+                        <video autoplay muted controls loop>
+                            <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+                            <source src="movie.ogg" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
 
                 </div>
                 <div class="g-item">
-                    <h3>It’s not magic,<br>
+                    <h3>test,<br>
                         It’s science</h3>
                     <div class="p-accordian">
-                        <button class="accordion active">Lorem Ipsum</button>
-                        <div class="panel">
+                        <div class="progress-bar">
+                            <div class="progress-bar-inner"></div>
+                        </div>
+                        <button class="accordion">Lorem Ipsum</button>
+                        <div class="panel" style="display: block;">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
 
@@ -267,11 +302,11 @@
             <div class="p-slider">
                 <div class="g-item">
                     <div class="video-element">
-                        <!-- <div class="vimeo-video" data-video-id="931144540"></div>
-                    <video class="custom-video" autoplay controls>
-                        <source src="https://vimeo.com/931144540" type="video/mp4">
-                    </video> -->
-                        <img src="./images/test.png">
+                        <video autoplay muted controls loop>
+                            <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+                            <source src="movie.ogg" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
 
                 </div>
@@ -279,8 +314,11 @@
                     <h3>It’s not magic<br>
                         It’s science</h3>
                     <div class="p-accordian">
+                        <div class="progress-bar">
+                            <div class="progress-bar-inner"></div>
+                        </div>
                         <button class="accordion">Lorem Ipsum</button>
-                        <div class="panel">
+                        <div class="panel" style="display: block;">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
 
@@ -306,7 +344,7 @@
             </div>
         </div>
     </section>
-
+    <!-- Product Slider Section End -->
     <script src="./js/app.js">
     </script>
 

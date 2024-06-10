@@ -1,3 +1,4 @@
+//Close Button Function
 document.addEventListener("DOMContentLoaded", function () {
   const closeButton = document.querySelector(".top-header .close-btn");
   if (closeButton) {
@@ -21,22 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  //Accrodian Function
-  var acc = document.getElementsByClassName("accordion");
-  var i;
-
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
-      }
-    });
-  }
-
   // Tab functionality for Play Boxes
   const tabs = document.querySelectorAll(".tabs .tab");
   tabs.forEach((tab) => {
@@ -57,52 +42,53 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Auto-playing slider
-const sliders = document.querySelectorAll(".p-slider");
-const gridContainer = document.querySelector(".grid-container");
-const sliderWidth = sliders[0].offsetWidth;
+// Accordion Function
+var acc = document.querySelectorAll(".accordion");
 
-let currentIndex = 0;
+acc.forEach(function (accordion) {
+  accordion.addEventListener("click", function () {
+    var panel = this.nextElementSibling;
+    var isActive = this.classList.contains("active");
+    acc.forEach(function (otherAccordion) {
+      if (otherAccordion !== accordion) {
+        otherAccordion.classList.remove("active");
+        otherAccordion.nextElementSibling.style.display = "none";
+      }
+    });
+    this.classList.toggle("active");
+    if (isActive) {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+});
 
-const nextSlide = () => {
-  sliders[currentIndex].classList.remove("active");
-  currentIndex = (currentIndex + 1) % sliders.length;
-  sliders[currentIndex].classList.add("active");
-};
-setInterval(nextSlide, 10000);
+//Auto Slider with Progress Bar
+document.addEventListener("DOMContentLoaded", function () {
+  const sliders = document.querySelectorAll(".p-slider");
+  let currentIndex = 0;
 
-//Carousel
-$(".brand-carousel").owlCarousel({
-  items: 6,
-  margin: 0,
-  //loop:true,
-  dots: true,
-  autoHeight: true,
-  //autoplay: true,
-  smartSpeed: 250,
-  autoplayTimeout: 4000,
-  nav: true,
-  navText: [],
-  responsive: {
-    0: {
-      items: 2,
-    },
-    350: {
-      items: 2,
-    },
-    460: {
-      items: 2,
-    },
-    768: {
-      items: 3,
-    },
-    992: {
-      items: 2,
-    },
-    1200: {
-      items: 4,
-    },
-  },
+  const nextSlide = () => {
+    sliders[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % sliders.length;
+    sliders[currentIndex].classList.add("active");
+
+    const progressBar = sliders[currentIndex].querySelector(
+      ".progress-bar-inner"
+    );
+    progressBar.style.width = "0%";
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += 25;
+      progressBar.style.width = progress + "%";
+      if (progress >= 100) {
+        clearInterval(interval);
+      }
+    }, 1000);
+  };
+
+  setInterval(nextSlide, 5000);
 });
 
 //Mobile Toggle Menu
@@ -120,11 +106,11 @@ function toggleMenu() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var mealtimeLink = document.querySelector("#mobile-menu .m-menu ul li a");
+  var mealtimeLink = document.querySelector("#mobile-menu .m-menu ul li");
   var mealtimeMenu = document.querySelector(".m-sub-menu");
 
   mealtimeLink.addEventListener("click", function (e) {
-    e.preventDefault(); // Prevent the link from navigating
+    e.preventDefault();
 
     mealtimeMenu.style.display =
       mealtimeMenu.style.display === "block" ? "none" : "block";
